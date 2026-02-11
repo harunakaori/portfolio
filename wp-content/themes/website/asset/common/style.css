@@ -1943,7 +1943,7 @@ button[type="submit"]:hover {
         display: flex;
         position: absolute;
         top: 50%;
-        right: 20px;
+        right: 0px;
         transform: translateY(-50%);
     }
 
@@ -2337,5 +2337,532 @@ button[type="submit"]:hover {
 @media screen and (max-width: 768px) {
     .profile-min-image img {
         display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+  }
+
+  .nav-upper {
+    display: none;
+  }
+
+  .nav-lower {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    padding-top: 120px;
+  }
+
+  .nav-lower.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /* 上の言語切り替えだけ消す */
+  .nav-upper {
+    display: none;
+  }
+
+  /* メニュー本体はJS制御 */
+  .nav-lower {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    padding-top: 120px;
+  }
+
+  .nav-lower.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex !important; /* スマホ時に強制表示 */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+  }
+
+  .nav-upper {
+    display: none;
+  }
+
+  .nav-lower {
+    display: none; /* 初期状態は非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    padding-top: 120px;
+    /* transitionなどが必要ならここに追加 */
+  }
+
+  /* JSでactiveがついた時、display: none を打ち消して表示させる */
+  .nav-lower.active {
+    display: flex !important; 
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav-lower {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff !important; /* 背景を真っ白に強制 */
+    z-index: 9999; /* ロゴやボタン(10000)のすぐ下の階層にする */
+    padding-top: 100px; /* ロゴと重ならないように調整 */
+  }
+
+  .nav-lower.active {
+    display: flex !important; /* display: none を打ち消す */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list.lower {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-list.lower li a {
+    color: #333 !important; /* 文字を濃い色に強制 */
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px;
+  }
+}
+
+/* スマホ・タブレット用（768px以下）のスタイル */
+@media screen and (max-width: 768px) {
+    /* 1. PC用の横並びメニューを隠し、全画面表示の準備をする */
+    .nav-lower {
+        display: none; /* 最初は隠す */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff; /* 背景を白に */
+        z-index: 999;
+        padding-top: 100px;
+        overflow-y: auto;
+    }
+
+    /* 2. ボタンが押された時（activeクラスがついた時）に表示する */
+    .nav-lower.active {
+        display: block !important; /* 強制的に表示させる */
+    }
+
+    /* 3. 中身を縦並びに強制変更する */
+    .nav-list.lower {
+        display: flex !important;
+        flex-direction: column !important; /* 横並びを解除して縦にする */
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* 4. メニュー内の文字を読みやすくする */
+    .nav-list.lower li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 5. PC用の右上の言語ボタンをスマホでは隠す */
+    .nav-upper {
+        display: none !important;
+    }
+
+    /* 6. ハンバーガーボタンを一番手前に出す */
+    .hamburger {
+        z-index: 1000;
+        position: relative;
+    }
+}
+
+/* PC用（769px以上）ではスマホ専用パーツを隠す */
+@media screen and (min-width: 769px) {
+    .mobile-lang, 
+    .nav-lower hr {
+        display: none;
+    }
+}
+
+
+/* --- PCレイアウトの修正 --- */
+@media screen and (min-width: 769px) {
+    .header-inner {
+        display: flex;
+        flex-direction: column; /* 上下に分ける */
+        align-items: flex-end; /* 全体を右寄せに準備 */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between; /* ロゴと右側を離す */
+        align-items: center;
+        width: 100%; /* 横幅いっぱい使う */
+    }
+
+    /* 右上の言語切り替え */
+    .nav-upper {
+        margin-bottom: 5px;
+    }
+
+    .nav-list.upper {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 下段のメインメニュー */
+    .nav-lower {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; /* メニューを右に寄せる */
+        margin-top: 5px;
+    }
+
+    .nav-list.lower {
+        display: flex;  
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap; /* 途中で改行させない */
+    }
+
+    .nav-list.lower li a {
+        font-size: 16px; /* 少し小さくして余裕を持たせる */
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* 余計な線を消す（もし入っていたら） */
+    .header-top::after {
+        content: none !important;
+    }
+}
+
+/* --- スマホ・タブレット用 (768px以下) --- */
+@media screen and (max-width: 768px) {
+    /* 1. PC用の横並びメニューを強制的に消して全画面準備 */
+    .nav-lower {
+        display: none !important; /* 最初は絶対に隠す */
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff !important;
+        z-index: 999;
+        padding-top: 100px;
+        overflow-y: auto;
+    }
+
+    /* 2. JavaScriptで active クラスがついたら表示する */
+    .nav-lower.active {
+        display: flex !important; /* 表示して中央寄せにする */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 3. リストを縦並びに整える */
+    .nav-list.lower {
+        display: flex !important;
+        flex-direction: column !important; /* 横並びを強制解除 */
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    /* 4. メニュー内の各リンク */
+    .nav-list.lower li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 5. 右上に浮いているPC用の言語ボタンを消す */
+    .nav-upper {
+        display: none !important;
+    }
+
+    /* 6. ボタンを一番手前へ */
+    .hamburger {
+        z-index: 1000 !important;
+        position: relative;
+    }
+}
+
+/* --- PC用 (769px以上) --- */
+@media screen and (min-width: 769px) {
+    /* スマホ専用の言語切り替えをPCでは隠す */
+    .mobile-lang, 
+    .nav-lower hr {
+        display: none !important;
+    }
+}
+
+/* PCではスマホ用の言語切り替えを隠す */
+.mobile-lang {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    /* スマホのメニュー内では表示する */
+    .mobile-lang {
+        display: block;
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+}
+
+/* スマホ・タブレット用（768px以下）のスタイル */
+@media screen and (max-width: 768px) {
+    /* 1. PC用の横並びメニューを隠し、全画面表示の準備をする */
+    .nav-lower {
+        display: none; /* 最初は隠す */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff; /* 背景を白に */
+        z-index: 999;
+        padding-top: 100px;
+        overflow-y: auto;
+    }
+
+    /* 2. ボタンが押された時（activeクラスがついた時）に表示する */
+    .nav-lower.active {
+        display: block !important; /* 強制的に表示させる */
+    }
+
+    /* 3. 中身を縦並びに強制変更する */
+    .nav-list.lower {
+        display: flex !important;
+        flex-direction: column !important; /* 横並びを解除して縦にする */
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* 4. メニュー内の文字を読みやすくする */
+    .nav-list.lower li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 5. PC用の右上の言語ボタンをスマホでは隠す */
+    .nav-upper {
+        display: none !important;
+    }
+
+    /* 6. ハンバーガーボタンを一番手前に出す */
+    .hamburger {
+        z-index: 1000;
+        position: relative;
+        top: 10px;
+        right: 0px;
+    }
+}
+
+/* PC用（769px以上）ではスマホ専用パーツを隠す */
+@media screen and (min-width: 769px) {
+    .mobile-lang, 
+    .nav-lower hr {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* 1. ヘッダー上部のレイアウト調整 */
+    .header-top {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center !important;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 10001; /* メニューより手前に */
+    }
+
+    /* 2. メニュー本体（全画面表示） */
+    .nav-lower {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 10000;
+        padding-top: 100px; /* ロゴの位置に合わせて調整 */
+    }
+
+    .nav-lower.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 3. リスト全体の調整 */
+    .nav-list.lower {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* 言語切り替え部分のデザイン */
+    .mobile-lang {
+        display: block !important; /* スマホでは必ず表示 */
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .mobile-lang a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+    }
+
+    /* 区切り線 */
+    .nav-lower hr {
+        display: block !important;
+        border: 0;
+        border-top: 1px solid #eee;
+        width: 60%;
+        margin: 10px 0 20px 0;
+    }
+
+    /* メインメニュー項目 */
+    .nav-list.lower li {
+        margin: 10px 0;
+    }
+
+    .nav-list.lower li a {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+    }
+
+    /* 4. PC用の右上言語ボタンを隠す */
+    .nav-upper {
+        display: none !important;
+    }
+
+    .nav-list.lower {
+        gap: 0px;
+    }
+
+    .mobile-lang {
+        display: block !important; 
+        margin-bottom: 5px !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: #333 !important;
+    }
+}
+
+
+
+/* 日本語版(lang="ja")のスマホ表示を強制修正 */
+@media screen and (max-width: 768px) {
+    /* 1. ロゴの横に漏れているPC用メニューを完全に消す */
+    [lang="ja"] .nav-upper,
+    [lang="ja"] .nav-list.upper {
+        display: none !important; /* これで「日本語｜英語」の漏れを消します */
+    }
+
+    /* 2. ヘッダーの横並びを再定義 */
+    [lang="ja"] .header-top {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important; /* ロゴとボタンの高さを揃える */
+        padding: 10px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. メニュー本体を正しく全画面にする */
+    [lang="ja"] .nav-lower {
+        display: none !important; /* 通常時は消す */
+    }
+
+    [lang="ja"] .nav-lower.active {
+        display: flex !important; /* 開いた時だけ出す */
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: #fff !important;
+        z-index: 10000 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 100px !important;
+    }
+
+    /* 4. メニュー内の言語切り替えを表示 */
+    [lang="ja"] .mobile-lang {
+        display: block !important;
+        font-weight: bold !important;
+        margin-bottom: 10px !important;
     }
 }
