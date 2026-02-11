@@ -3,8 +3,8 @@
    ========================================================================== */
 @font-face {
     font-family: 'ZenKakuGothicNew';
-    src: url('https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/common/fonts/ZenKakuGothicNew-Regular.woff2') format('woff2'),
-        url('https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/common/fonts/ZenKakuGothicNew-Regular.woff') format('woff');
+    src: url('https://harunakaori.github.io/wp-content/themes/website/asset/common/fonts/ZenKakuGothicNew-Regular.woff2') format('woff2'),
+        url('https://harunakaori.github.io/wp-content/themes/website/asset/common/fonts/ZenKakuGothicNew-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -557,7 +557,7 @@ h2.section-title {
 
 /* --- WORK --- */
 .work {
-    background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/bg.jpg);
+    background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/bg.jpg);
     padding: 0;
 }
 
@@ -832,7 +832,7 @@ h2.section-title {
 
 /* --- NEWS (TOP) --- */
 #news {
-    background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/bg-line.png);
+    background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/bg-line.png);
     background-size: 100%;
     background-color: #D3E5F2;
 }
@@ -896,7 +896,7 @@ h2.section-title {
 
 /* --- CONTACT (TOP) --- */
 .contact {
-    background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/bg-contact.png);
+    background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/bg-contact.png);
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
@@ -1522,7 +1522,7 @@ html, body {
 
 /* --- NEWS (下層追加分) --- */
 .news {
-    background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/bg-line.png);
+    background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/bg-line.png);
     background-size: 100%;
     background-color: #D3E5F2;
 }
@@ -1646,7 +1646,7 @@ html, body {
     position: relative;
     padding: 120px 20px;
     background: #fff;
-    background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/contact-bg.png);
+    background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/contact-bg.png);
     background-size: 100%;
     overflow: hidden;
 }
@@ -2297,7 +2297,7 @@ button[type="submit"]:hover {
         position: relative;
         padding: 120px 20px;
         background: #fff;
-        background-image: url(https://harunakaori.github.io/portfolio/wp-content/themes/website/asset/img/contact-bg.png);
+        background-image: url(https://harunakaori.github.io/wp-content/themes/website/asset/img/contact-bg.png);
         background-size: 400%;
         overflow: hidden;
         background-repeat: no-repeat;
