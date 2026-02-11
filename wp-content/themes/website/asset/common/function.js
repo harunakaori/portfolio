@@ -1,11 +1,11 @@
 const hamburger = document.querySelector('.hamburger');
-// クラス名を変えず、既存の .nav-lower を操作する
-const nav = document.querySelector('.nav-lower');
+const overlay = document.querySelector('.overlay-menu');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
-  nav.classList.toggle('active'); // nav-lowerにactiveクラスをつけ外しする
+  overlay.classList.toggle('active');
 });
+
 
 
 
